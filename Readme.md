@@ -11,6 +11,8 @@
 
 ## ChangeLog
 
+`0.2.1' - Changed getter isConflict to function isConflict(), because getters are not supported in IE8.
+
 `0.2.0` - [Fixes Bug #17](https://github.com/flitbit/diff/issues/17), [Fixes Bug #19](https://github.com/flitbit/diff/issues/19), [Enhancement #21](https://github.com/flitbit/diff/issues/21) Applying changes that are properly structured can now be applied as a change (no longer requires typeof Diff) - supports differences being applied after round-trip serialization to JSON format. Prefilter now reports the path of all changes - it was not showing a path for arrays and anything in the structure below (reported by @ravishvt).
 
 *Breaking Change* &ndash; The structure of change records for differences below an array element has changed. Array indexes are now reported as numeric elements in the `path` if the changes is merely edited (an `E` kind). Changes of kind `A` (array) are only reported for changes in the terminal array itself and will have a nested `N` (new) item or a nested `D` (deleted) item.
